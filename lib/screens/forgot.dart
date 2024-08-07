@@ -26,13 +26,33 @@ class _ForgotState extends State<Forgot> {
       body: Padding(  
         padding: const EdgeInsets.all(20.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+
             TextFormField(
-              controller: email,
-              decoration: InputDecoration(
-                hintText: "Enter Email"
-              ),
-            ),
+                  controller: email,
+                  keyboardType: TextInputType.emailAddress,
+                  
+                  decoration: InputDecoration(
+                    labelText: "Enter Email",
+                    hintText: "Enter Email",
+                    prefixIcon: Icon(Icons.email),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                                    
+              
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20)
+                    )
+                  ),
+                ),
+
+                SizedBox(
+                  height: 50,
+                ),
+
         
             
 

@@ -29,20 +29,65 @@ class _SignupState extends State<Signup> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
+            
             TextFormField(
-              controller: email,
-              decoration: InputDecoration(
-                hintText: "Enter Email"
-              ),
-            ),
+                  controller: email,
+                  keyboardType: TextInputType.emailAddress,
+                  
+                  decoration: InputDecoration(
+                    labelText: "Enter Email",
+                    hintText: "Enter Email",
+                    prefixIcon: Icon(Icons.email),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                                    
+              
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20)
+                    )
+                  ),
+                ),
         
+            SizedBox(
+                height: 40,
+              ),
+        
+      
             TextFormField(
               controller: password,
-              decoration: InputDecoration(
-                hintText: "Enter Password"
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.lock),
+                    suffixIcon: Icon(Icons.remove_red_eye),
+                    hintText: "Password",
+                    labelText: "Password",
+      
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+      
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    errorBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      
+                      borderSide: BorderSide(
+                        color: Colors.red,
+                        width: 2,
+      
+                      )
+                    )
+                  ),
+                  
+                  
+                ),
+      
+                SizedBox(
+                height: 40,
               ),
-            ),
-
+      
+      
             ElevatedButton(
               onPressed: (){
                 signUp();
