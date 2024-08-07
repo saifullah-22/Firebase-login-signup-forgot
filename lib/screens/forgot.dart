@@ -21,7 +21,7 @@ class _ForgotState extends State<Forgot> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Forgot Password"),
+        title: const Text("Forgot Password"),
       ),
       body: Padding(  
         padding: const EdgeInsets.all(20.0),
@@ -37,7 +37,7 @@ class _ForgotState extends State<Forgot> {
                   decoration: InputDecoration(
                     labelText: "Enter Email",
                     hintText: "Enter Email",
-                    prefixIcon: Icon(Icons.email),
+                    prefixIcon: const Icon(Icons.email),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                                     
@@ -49,7 +49,7 @@ class _ForgotState extends State<Forgot> {
                   ),
                 ),
 
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
 
@@ -60,7 +60,10 @@ class _ForgotState extends State<Forgot> {
               onPressed: (){
                 reset();
               }, 
-              child: Text("Send Link")),
+              child: const Text("Send Link",
+              style: TextStyle(
+              fontSize: 22,
+            ),)),
 
               
           ],

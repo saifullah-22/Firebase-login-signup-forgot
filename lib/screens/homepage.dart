@@ -18,17 +18,21 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+     // backgroundColor: Colors.amber,
       appBar: AppBar(
-        title: Text("Home Page"),
+        title: const Text("Home Page"),
       ),
       body: Center(
-        child: Text("${user!.email}"),
+        child: Text("${user!.email}",
+        style: const TextStyle(
+          fontSize: 35,
+        ),),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
           signout();
         },
-        child: Icon(Icons.login_rounded),),
+        child: const Icon(Icons.login_rounded),),
 
     );
   }

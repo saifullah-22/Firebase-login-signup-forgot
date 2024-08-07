@@ -25,7 +25,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login Page"),
+        title: const Text("Login Page"),
        // backgroundColor: Colors.amber,
         
       ),
@@ -33,7 +33,7 @@ class _LoginState extends State<Login> {
          mainAxisAlignment: MainAxisAlignment.center,
            crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
+          const SizedBox(
             height: 100,
           ),
           
@@ -43,7 +43,7 @@ class _LoginState extends State<Login> {
               child: TextFormField(
                 keyboardType: TextInputType.emailAddress,
                 controller: email,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Enter Email",
                   labelText: "Enter Email",
                   prefixIcon: Icon(Icons.email),
@@ -58,7 +58,7 @@ class _LoginState extends State<Login> {
             ),
             
       
-          SizedBox(
+          const SizedBox(
               height: 40,
             ),
       
@@ -69,7 +69,7 @@ class _LoginState extends State<Login> {
                 controller: password,
                 obscureText: true,
                 obscuringCharacter: "*",
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   prefixIcon: Icon(Icons.lock),
                   suffixIcon: Icon(Icons.remove_red_eye),
                   hintText: "Password",
@@ -92,7 +92,7 @@ class _LoginState extends State<Login> {
             ),
           
       
-          SizedBox(
+          const SizedBox(
               height: 30,
             ),
       
@@ -100,27 +100,40 @@ class _LoginState extends State<Login> {
             onPressed: (){
               signIn();
             }, 
-            child: Text("Login")),
+            child: const Text("Login",
+            style: TextStyle(
+              fontSize: 22,
+            ),
+            )
+            ),
       
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
       
             ElevatedButton(
             onPressed: (){
-              Get.to(Signup());
+              Get.to(const Signup());
             }, 
-            child: Text("Register Now")),
+            child: const Text("Register Now",
+            style: TextStyle(
+              fontSize: 22,
+            ),
+            )),
       
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
       
             ElevatedButton(
             onPressed: (){
-              Get.to(Forgot());
+              Get.to(const Forgot());
             }, 
-            child: Text("Forgot Password"))
+            child: const Text("Forgot Password",
+            style: TextStyle(
+              fontSize: 22,
+            ),
+            ))
         ],
       ),
     );

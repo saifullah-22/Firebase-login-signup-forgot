@@ -16,18 +16,20 @@ class _SignupState extends State<Signup> {
   TextEditingController password= TextEditingController();
   signUp() async{
     await FirebaseAuth.instance.createUserWithEmailAndPassword(email: email.text, password: password.text);
-    Get.offAll(Wrapper());
+    Get.offAll(const Wrapper());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Sign Up"),
+        title: const Text("Sign Up"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             
             TextFormField(
@@ -37,7 +39,7 @@ class _SignupState extends State<Signup> {
                   decoration: InputDecoration(
                     labelText: "Enter Email",
                     hintText: "Enter Email",
-                    prefixIcon: Icon(Icons.email),
+                    prefixIcon: const Icon(Icons.email),
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                                     
@@ -49,7 +51,7 @@ class _SignupState extends State<Signup> {
                   ),
                 ),
         
-            SizedBox(
+            const SizedBox(
                 height: 40,
               ),
         
@@ -57,8 +59,8 @@ class _SignupState extends State<Signup> {
             TextFormField(
               controller: password,
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.lock),
-                    suffixIcon: Icon(Icons.remove_red_eye),
+                    prefixIcon: const Icon(Icons.lock),
+                    suffixIcon: const Icon(Icons.remove_red_eye),
                     hintText: "Password",
                     labelText: "Password",
       
@@ -72,7 +74,7 @@ class _SignupState extends State<Signup> {
                     errorBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                       
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Colors.red,
                         width: 2,
       
@@ -83,7 +85,7 @@ class _SignupState extends State<Signup> {
                   
                 ),
       
-                SizedBox(
+                const SizedBox(
                 height: 40,
               ),
       
@@ -92,7 +94,10 @@ class _SignupState extends State<Signup> {
               onPressed: (){
                 signUp();
               }, 
-              child: Text("Sign Up"))
+              child: const Text("Sign Up",
+              style: TextStyle(
+              fontSize: 22,
+            ),))
           ],
         ),
       ),
